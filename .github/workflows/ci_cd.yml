@@ -28,6 +28,7 @@ jobs:
 
       - name: Run Unit-tests
         run: |
+          cd src
           if python -m pytest "test_class_car.py" -v --tb=short; then
             echo "All tests passed!"
           else
