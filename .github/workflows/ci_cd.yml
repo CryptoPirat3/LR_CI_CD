@@ -54,4 +54,5 @@ jobs:
         run: pip install ruff
 
       - name: Run Ruff Linter
-        run: ruff check --config=ruff.toml src
+        run: /home/vboxuser/sem_3/infa/laba_5/LR_CI_CD/laba_5/bin/ruff check --config=ruff.toml src
+
