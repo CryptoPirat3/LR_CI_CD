@@ -8,7 +8,7 @@ jobs:
   ruff-lint:
     name: Lint with Ruff
     runs-on: ubuntu-latest
-    needs: unit-tests_check  # Запускаем только после успешных тестов
+    #needs: unit-tests_check  # Запускаем только после успешных тестов
                       
     steps:
       - name: Checkout repository
@@ -28,6 +28,7 @@ jobs:
   unit-tests_check:
     name: Run unit-tests
     runs-on: ubuntu-latest
+    needs: ruff-lint
 
     steps:
       - name: Checkout repository
