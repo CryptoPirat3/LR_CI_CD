@@ -36,24 +36,23 @@ jobs:
             exit 1  # выходим с ошибкой для блокировки PR
           fi
 
-    ruff-lint:
-      name: Lint with Ruff
-      runs-on: ubuntu-latest
-      needs: unit-tests_check  # Запускаем только после успешных тестов
+  ruff-lint:
+    name: Lint with Ruff
+    runs-on: ubuntu-latest
+    needs: unit-tests_check  # Запускаем только после успешных тестов
                       
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.13'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
 
-        - name: Install Ruff
-          run: pip install ruff
+      - name: Install Ruff
+        run: pip install ruff
 
-        - name: Run Ruff Linter
-          uses: astral-sh/ruff-action@v3
-          with:
-            args: "check --config=ruff.toml src"
+      - name: Run Ruff Linter
+        run: ruff check --config=ruff.toml src
+
