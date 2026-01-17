@@ -10,7 +10,7 @@ class TestCase(unittest.TestCase):
 
     def test_drive(self):
         # Тест будет падат, чтобы этого изюежать сначала заправим автомобиль
-        self.car.refuel_car(40)
+        ### self.car.refuel_car(40)
         self.car.drive(20)
         self.assertRaises(Exception, lambda: self.car.drive(80000))
 
